@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 
 # 通过read_csv来读取我们的目的数据集
-adv_data = pd.read_csv("C:/Users/Administrator/Desktop/Advertising.csv")
+adv_data = pd.read_csv(r"/Users/hayleygao/PycharmProjects/Data_Analysis/day120102/test_data02.xlsx")
 # 清洗不需要的数据
 new_adv_data = adv_data.ix[:, 1:]
 # 得到我们所需要的数据集且查看其前几列以及数据形状
