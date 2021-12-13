@@ -14,15 +14,17 @@ X,Y = make_blobs(n_samples=1000,n_features=2,centers=4)  #<blob n.一点，一�
 #n_center代表创建数据的中心的个数
 #X返回的使数据的个数*特征，Y返回的是属于的类别即标签
 print(X)
-print('------------------------------------')
+print('------------------------------------') # X 是指data
 print(Y)
-print('------------------------------------')
+print('------------------------------------') # Y 是指label
 
 
 fig = plt.figure(figsize=(20,12))
+
 plt.rcParams['font.family'] = 'KaiTi' # 设置字体样式
 plt.rcParams['axes.unicode_minus'] =False
-plt.subplot(2,3,1)
+plt.subplot(2,3,1)  # fig,axes
+
 colors = ['red','pink','orange','gray','blue','green']
 for i in range(4):
     plt.scatter(X[Y==i,0],X[Y==i,1],marker="o",s=8,color=colors[i])
@@ -35,6 +37,7 @@ for i in range(2,7):
     y_pred = cluster.labels_#获取训练后对象的每个样本的标签
     centtrod = cluster.cluster_centers_
     plt.subplot(2,3,i)
+
 for j in range(i):
     plt.scatter(X[y_pred==j,0],X[y_pred==j,1],marker="o",s=8,color=colors[j])
     plt.scatter(centtrod[:,0],centtrod[:,1],s=28,marker="H",color = "",edgecolors="purple")
